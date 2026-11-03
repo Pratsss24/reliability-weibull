@@ -245,7 +245,7 @@ def main() -> int:
         "teams": charts.teams(team_rows, out_dir),
     }
 
-    html = report.build(
+    report_path = report.build(
         census=census, fitted=fitted, shape_test=test, naive=naive, km=km,
         plot=plot, recovery_rows=recovery_rows,
         cif_technical=cif_technical, cif_accident=cif_accident,
@@ -253,9 +253,9 @@ def main() -> int:
         season_rows=season_rows, team_rows=team_rows, logrank=comparison,
         unknown_rows=unknown_rows, granularity=granularity,
         restricted=restricted, figures=figures,
-        out_path=out_dir / "report.html")
+        out_path=out_dir / "report.pdf")
 
-    print(f"\nreport  {html}")
+    print(f"\nreport  {report_path}")
     for path in figures.values():
         print(f"figure  {path}")
     return 0

@@ -20,7 +20,7 @@ python run.py --refresh    # re-fetch the race results
 python -m pytest tests/    # 42 tests
 ```
 
-Output: `out/report.html`, self-contained, charts inlined.
+Output: `out/report.pdf`, a printable report composed in matplotlib.
 
 ---
 
@@ -386,7 +386,8 @@ src/
   weibull.py      right-censored MLE by profile likelihood, standard errors,
                   the exponential closed form, the naive comparisons
   charts.py       eight figures
-  report.py       one self-contained HTML file
+  report.py       the printable PDF report
+  paper.py        A4 page composition
 tests/
   test_reliability.py   42 tests, anchored on closed forms and hand examples
 data/
